@@ -1,4 +1,4 @@
-# SCREENGRABBER LIB
+# TPS2L_SCREEN_CAPTURE
 
 To download the most recent project without installing GIT, please press the green "Clone or Download" button and select "Download ZIP".
 
