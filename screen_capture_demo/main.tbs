@@ -1,0 +1,64 @@
+include "global.tbh"
+
+'--------------------------------------------------------------------
+declare sub setup_lcd
+declare sub display_sample_screen()
+
+'====================================================================
+
+sub on_sys_init()
+	net.ip="192.168.1.230"	'<======== SET A SUITABLE IP ADDRESS
+
+	if scap_start()<>EN_SCAP_STATUS_OK then
+		sys.debugprint("Could not allocate the required number of sockets")
+		sys.halt
+	end if
+	
+	setup_lcd()
+	display_sample_screen()
+end sub
+
+sub setup_lcd()
+	lcd.width=320
+	lcd.height=240
+	io.num=PL_IO_NUM_40
+	io.enabled=YES
+	io.num=PL_IO_NUM_41
+	io.enabled=YES
+	io.num=PL_IO_NUM_42
+	io.enabled=YES
+	io.num=PL_IO_NUM_43
+	io.enabled=YES
+	io.num=PL_IO_NUM_55
+	io.enabled=YES
+	io.num=PL_IO_NUM_54
+	io.enabled=YES
+	io.state=LOW
+	lcd.rotated=YES
+	lcd.iomapping="55,43,42,41,40,0"
+	lcd.enabled=YES
+	lcd.forecolor=0
+	lcd.fill(0,0,lcd.width,lcd.height)
+end sub
+
+sub display_sample_screen()
+	romfile.open("MS_15X21(H).BIN")
+	lcd.setfont(romfile.offset)
+	
+	lcd.forecolor=0
+	lcd.fill(0,0,lcd.width,lcd.height)
+	romfile.open("logo.bmp")
+	lcd.bmp(romfile.offset, 110, 10, 0, 0, 100, 100)
+	
+	lcd.textalignment=PL_LCD_TEXT_ALIGNMENT_MIDDLE_CENTER
+	lcd.forecolor=&hFFFF
+	lcd.printaligned("Point your",0,90,lcd.width,25)
+	lcd.forecolor=&hF800
+	lcd.printaligned("browser to",0,120,lcd.width,25)
+	lcd.forecolor=&h1F
+	lcd.printaligned("<IP addr>/scap.html",0,150,lcd.width,25)
+	lcd.forecolor=&h7E0
+	lcd.printaligned("to capture this",0,180,lcd.width,25)
+	lcd.forecolor=&hFFFF
+	lcd.printaligned("screen",0,210,lcd.width,25)
+end sub
