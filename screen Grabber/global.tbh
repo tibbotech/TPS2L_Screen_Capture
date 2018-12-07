@@ -1,0 +1,10 @@
+'DEFINES-------------------------------------------------------------
+#define SCREENSHOT_INTERFACE "NET"
+#define SCREENGRABBER_HTTP_TX_BUFF_PAGES 8 
+#define SCREENGRABBER_HTTP_RX_BUFF_PAGES 2 
+#define SCREENGRABBER_HTTP_VAR_BUFF_PAGES 2 
+
+'INCLUDES------------------------------------------------------------
+include "screengrabber.tbh"
+include "sock\trunk\sock.tbh"
+'DECLARATIONS--------------------------------------------------------

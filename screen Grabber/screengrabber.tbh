@@ -1,0 +1,31 @@
+'Open the browser and use the ip address of the device to use the WEB screengrabber
+
+
+
+#ifndef SCREENGRABBER_INTERFACE 
+	#define SCREENGRABBER_INTERFACE "NET" 
+#endif
+'Change according to the network interface used
+'the valid definitions is the same as sock.allowedinterfaces
+
+
+#ifndef SCREENGRABBER_HTTP_TX_BUFF_PAGES 
+	#define SCREENGRABBER_HTTP_TX_BUFF_PAGES 8 
+#endif
+
+#ifndef SCREENGRABBER_HTTP_RX_BUFF_PAGES 
+	#define SCREENGRABBER_HTTP_RX_BUFF_PAGES 2 
+#endif
+#ifndef SCREENGRABBER_HTTP_VAR_BUFF_PAGES 
+	#define SCREENGRABBER_HTTP_VAR_BUFF_PAGES 2 
+#endif
+'Change the number of buffer pages assigned if needed
+
+
+declare sub screengrabber_http_sock_init(num_of_socks as byte )
+'For this library to work an IP address has to be assigned to the device
+'sock library has to be used 
+'The HTTP has to have several sockets therefore the first and last socket number sould be passed
+
+declare sub take_screenshots_bmp(offsetX as word, offsetY as word, Xsize as word,Ysize as word)
+declare function size_convert(v as dword) as string(4)
