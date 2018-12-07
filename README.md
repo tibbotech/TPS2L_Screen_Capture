@@ -27,7 +27,7 @@ The files that is required to be included in the project are:
 
    If the html files are not in BASIC type right click on each file and select **change file type** and from the popup window change the Type to **HTML file (BASIC)**.
 
-   ![Capture](\Capture.PNG)
+   ![HTML_edit](HTML_edit.PNG)
 
 ## How To Use The Library
 
