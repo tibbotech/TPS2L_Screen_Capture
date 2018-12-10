@@ -12,13 +12,13 @@ This download contains the library required to be able to get screenshots from t
 
 The files that is required to be included in the project are:
 
-1. screengrabber.tbs
+1. scap.tbs
 
-2. screengrabber.tbh
+2. scap.tbh
 
-3. screengrabber.html
+3. scap.html
 
-4. bmpfile.html
+4. scap_bmpfile.html
 
 5. socket library
 
@@ -27,7 +27,7 @@ The files that is required to be included in the project are:
 
    If the html files are not in BASIC type right click on each file and select **change file type** and from the popup window change the Type to **HTML file (BASIC)**.
 
-   ![HTML_edit](HTML_edit.PNG)
+   ![HTML_Settings](HTML_Settings.PNG)
 
 ## How To Use The Library
 
@@ -40,42 +40,48 @@ The required preprocessors are,If these preprocessors are not defined the follow
 ```basic
 #define SCREENSHOT_INTERFACE "NET" 'definitions is the same as sock.allowedinterfaces
 #define SCREENGRABBER_HTTP_TX_BUFF_PAGES 8 
-#define SCREENGRABBER_HTTP_RX_BUFF_PAGES 2 
 #define SCREENGRABBER_HTTP_VAR_BUFF_PAGES 2
 ```
 
 ### Step 2: Initializing the library:
 
-In order to initialize the library the following process has to be called **After obtaining a valid IP address **
+In order to initialize the library the following code snippet has to be wrote on_sys_init
+
+​	**Note:**
+​	Make sure to change the IP ADDRESS to a suitable one.
 
 ```basic
-declare sub screengrabber_http_sock_init(num_of_socks as byte )
-'For this library to work an IP address has to be assigned to the device
-'sock library has to be used 
-'The HTTP has to have several sockets therefore the amount of sockets that will be used should be passed
+net.ip="192.168.1.200"	'<======== SET A SUITABLE IP ADDRESS
+
+if scap_start()<>EN_SCAP_STATUS_OK then
+    sys.debugprint("Could not allocate the required number of sockets")
+    sys.halt
+end if
 
 ```
 
-For this library to work the device has to be assigned an IP address according to the interface that will be used either by using the DHCP library or a static IP address (not recommended).
+For this library to work the device has to be assigned an IP address according to the interface that will be used either by using the DHCP library or a static IP address.
 
 ### Step 3: Using the Library:
 
-To use this library open the following link on the web browser: 192.168.1.230/screengrabber.html
+To use this library open the following link on the web browser: 192.168.1.200/screengrabber.html
 
-**In the URL replace 192.168.1.230 with the device IP address**
+**In the URL replace 192.168.1.200 with the device IP address**
 
-After opening the previous link the following screen will show click Capture to start the screenshot process and wait till it finish. 
+After opening the previous link the following screen will show click Capture the screen to start the screenshot process and The progress bar will show the screen captureprogress 
 
-![startscreen](startscreen.JPG)
+![startscreen](startscreen.PNG)
 
-After clicking Capture wait for 16~20 seconds until the screenshot is finished 
+The screenshot progress can take up to one minute, The progress bar will show the screen capture progress. 
 
-After the screenshot finish the screen will appear as following and repeat whenever required
+​	![Captureing](Captureing.PNG)
 
-![Capture](Capture.JPG)
+After The screen capture is finished the screen will appear. 
 
-### Step 4: Cropping and showing the device:
+![Screen Captured](Screen Captured.PNG)
 
-If it is required to crop the captured screen adjust the start point and end point of the required picture and then click Capture, If it is required to remove the device from the picture and just show the captured screen uncheck **show device**
+### Step 4: Cropping and showing the device outline:
 
-![startscreen_highlight](startscreen_highlight.JPG)
+If it is required to crop the captured screen adjust the start point and end point of the required picture and then click Capture, If it is required to remove the device from the picture and just show the captured screen uncheck **Add TPS2L outline**
+
+![Cropping](Cropping.PNG)

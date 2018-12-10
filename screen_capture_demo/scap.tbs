@@ -61,7 +61,6 @@ sub scap_capture(offsetX as word, offsetY as word, Xsize as word,Ysize as word)
 	dim red_value , green_value , blue_value as byte
 	dim file_header,file_size,bmp_data_size as string
 	dim data_size as dword
-	dim temp,m,d,q,temp_gray as byte
 	
 	data_size=0
 	spare=0
@@ -97,7 +96,7 @@ sub scap_capture(offsetX as word, offsetY as word, Xsize as word,Ysize as word)
 		for  lx = offsetX to  Xsize -1
 			
 			pixel = lcd.getpixel(lx,ly)
-			
+
 			red_value = (pixel and red_mask)
 			green_value = (pixel and green_mask) shr 5
 			blue_value = (pixel and blue_mask) shr 11

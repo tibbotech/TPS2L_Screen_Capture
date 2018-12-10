@@ -7,7 +7,7 @@ declare sub display_sample_screen()
 '====================================================================
 
 sub on_sys_init()
-	net.ip="192.168.1.230"	'<======== SET A SUITABLE IP ADDRESS
+	net.ip="192.168.1.200"	'<======== SET A SUITABLE IP ADDRESS
 
 	if scap_start()<>EN_SCAP_STATUS_OK then
 		sys.debugprint("Could not allocate the required number of sockets")

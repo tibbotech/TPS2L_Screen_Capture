@@ -4,8 +4,8 @@ platform=TPP2W(G2)
 src_lib_ver=2_01_02
 name=screen Grabber TPP2
 output=screen Grabber TPP2.tpc
-debug=on
-defines= /dLCD_TYPE=SAMSUNG_S6B0108 /dOBJECT_LCD=LCD_ENABLED /dOBJECT_FD=FD_ENABLED /dOBJECT_KP=KP_ENABLED /dOBJECT_WLN=WLN_ENABLED
+debug=off
+defines= /dLCD_TYPE=SOLOMON_SSD1963 /dOBJECT_LCD=LCD_ENABLED /dOBJECT_FD=FD_ENABLED /dOBJECT_KP=KP_ENABLED /dOBJECT_WLN=WLN_ENABLED
 transport=udp_broadcast
 [address1]
 platform=SIMULATOR
@@ -14,7 +14,11 @@ address=0.36.119.82.149.40
 [address2]
 platform=TPP2W(G2)
 transport=udp_broadcast
-address=0.36.119.82.149.40
+address=0.36.119.86.72.92
+[address3]
+platform=TPP2W
+transport=udp_broadcast
+address=0.1.2.3.4.100
 [file1]
 path=main.tbs
 type=basic
@@ -61,23 +65,27 @@ location=project
 path=scap.tbh
 type=header
 format=
+condition=
 locked=no
 location=project
 [file8]
 path=scap.tbs
 type=basic
 format=
+condition=
 locked=no
 location=project
 [file9]
 path=scap.html
 type=html
 format=65001
+condition=
 locked=no
 location=project
 [file10]
 path=scap_bmpfile.html
 type=html
 format=65001
+condition=
 locked=no
 location=project
