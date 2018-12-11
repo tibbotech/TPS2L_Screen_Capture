@@ -2,6 +2,6 @@
 
 'INCLUDES------------------------------------------------------------
 include "sock\trunk\sock.tbh"
-include "scap.tbh"
+include "scap\scap.tbh"
 
 'DECLARATIONS--------------------------------------------------------
