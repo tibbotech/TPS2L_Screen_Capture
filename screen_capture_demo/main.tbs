@@ -10,7 +10,7 @@ sub on_sys_init()
 	net.ip="192.168.1.200"	'<======== SET A SUITABLE IP ADDRESS
 
 	if scap_start()<>EN_SCAP_STATUS_OK then
-		sys.debugprint("Could not allocate the required number of sockets")
+		sys.debugprint("Could not allocate the necessary number of sockets")
 		sys.halt
 	end if
 	

@@ -19,8 +19,8 @@
 '--------------------------------------------------------------------------------
 'Status codes
 enum en_scap_status_codes	
-	EN_SCAP_STATUS_OK,					'Operation completed successfully
-	EN_SCAP_STATUS_OUT_OF_SOCKETS		'No free sockets left
+	EN_SCAP_STATUS_OK,					 'Operation completed successfully
+	EN_SCAP_STATUS_OUT_OF_SOCKETS		 'No free sockets left
 end enum
 
 '--------------------------------------------------------------------------------

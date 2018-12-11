@@ -73,7 +73,7 @@
 	<div id="picture">
 		<canvas id="canvas" width="459" height="452" style="display: inline-block;"></canvas>
 		<div id="demo">
-			<button id="button" type="button" onclick="loadDoc()" class="button">Capture the screen</button>	
+			<button id="button" type="button" onclick="loadDoc()" class="button">Capture the Screen</button>	
 			<progress max="100"  id = "progress"  value="0"></progress>
 		</div></div>	
 	<div id="settings">
@@ -143,7 +143,7 @@ function loadDoc(){
 			document.getElementById("x_end").value=screenshot_X_end}}
 	document.getElementById("button").style.opacity = 0.6;
     document.getElementById("button").style.cursor = "not-allowed";
-	document.getElementById("button").innerHTML = "Please wait...";
+	document.getElementById("button").innerHTML = "Please Wait...";
     document.getElementById("button").disabled = true;
 	document.getElementById("progress").value=0;
 	var xhttp = new XMLHttpRequest();
@@ -178,7 +178,7 @@ img2.onload = function(){
 		context.globalCompositeOperation="source-over";}
 	document.getElementById("button").style.opacity = 1;
     document.getElementById("button").style.cursor= "pointer";
-	document.getElementById("button").innerHTML = "Capture the screen";
+	document.getElementById("button").innerHTML = "Capture the Screen";
     document.getElementById("button").disabled = false;}
 function updateProgress (oEvent) {
     var percentComplete = oEvent.loaded / 230454 * 100;
