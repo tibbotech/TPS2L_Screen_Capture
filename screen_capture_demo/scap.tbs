@@ -112,10 +112,10 @@ sub scap_capture(offsetX as word, offsetY as word, Xsize as word,Ysize as word)
 			next i
 								
 			while sock.txfree < 4
-			
+				sock.send()
 			wend
 			sock.setdata(pixels)
-			if sock.newtxlen >=1024 then sock.send
+			sock.send
 			
 		next lx
 		ly=ly-1
