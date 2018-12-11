@@ -8,12 +8,16 @@
 	#define SCAP_DEBUG_PRINT 0
 #endif
 
+'The following will be divided between all sockets allocated by the library.
+'The number of sockets is equal to SCAP_NUM_OF_SOCK (defined in scap.tbs).
 #ifndef SCAP_HTTP_TX_BUFF_PAGES 
-	#define SCAP_HTTP_TX_BUFF_PAGES 8 
+	#define SCAP_HTTP_TX_BUFF_PAGES 16 
 #endif
 
+'The following will be divided between all sockets allocated by the library.
+'The number of sockets is equal to SCAP_NUM_OF_SOCK (defined in scap.tbs).
 #ifndef SCAP_HTTP_VAR_BUFF_PAGES 
-	#define SCAP_HTTP_VAR_BUFF_PAGES 2 
+	#define SCAP_HTTP_VAR_BUFF_PAGES 4 
 #endif
 
 '--------------------------------------------------------------------------------

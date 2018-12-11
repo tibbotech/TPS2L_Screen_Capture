@@ -1,7 +1,4 @@
 'DEFINES-------------------------------------------------------------
-#define SCREENSHOT_INTERFACE "NET"
-#define SCAP_HTTP_TX_BUFF_PAGES 8 
-#define SCAP_HTTP_VAR_BUFF_PAGES 2 
 
 'INCLUDES------------------------------------------------------------
 include "sock\trunk\sock.tbh"

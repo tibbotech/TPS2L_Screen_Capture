@@ -7,7 +7,7 @@ include "global.tbh"
 '--------------------------------------------------------------------------------
 const SCAP_STAMP="SCAP> "
 const SCAP_CR_LF=chr(13)+chr(10)
-const SCAP_MIN_SOCK_NUM=2
+const SCAP_NUM_OF_SOCK=2
 
 '--------------------------------------------------------------------------------
 declare function scap_start() as en_scap_status_codes
@@ -25,7 +25,7 @@ public function scap_start() as en_scap_status_codes
 	#endif
 
 	dim f as byte
-	for f = 1 to SCAP_MIN_SOCK_NUM
+	for f = 1 to SCAP_NUM_OF_SOCK
 		sock_num=sock_get("scap_sock"+str(f))
 		if sock_num=255 then
 			#if SCAP_DEBUG_PRINT
@@ -38,9 +38,9 @@ public function scap_start() as en_scap_status_codes
 		sock.protocol=PL_SOCK_PROTOCOL_TCP
 		sock.httpportlist="80"
 		sock.inconmode= PL_SOCK_INCONMODE_ANY_IP_ANY_PORT
-		sock.txbuffrq(SCAP_HTTP_TX_BUFF_PAGES)
+		sock.txbuffrq(SCAP_HTTP_TX_BUFF_PAGES/SCAP_NUM_OF_SOCK)
 		sock.redir(PL_REDIR_SOCK0 + sock.num)
-		sock.varbuffrq(SCAP_HTTP_VAR_BUFF_PAGES)
+		sock.varbuffrq(SCAP_HTTP_VAR_BUFF_PAGES/SCAP_NUM_OF_SOCK)
 	next f 
 	sys.buffalloc()
 	
