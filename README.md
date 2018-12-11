@@ -1,26 +1,19 @@
 # TPS2L_SCREEN_CAPTURE
 
-To download the most recent project without installing GIT, please press the green "Clone or Download" button and select "Download ZIP".
+Ever had to produce high-quality images of your device's LCD screen? This need often arises when you are working on web pages or user manuals describing your product's functionality. If you ever tried taking photos of LCD screens with a camera, you know that the result always looks somewhat skewed, over- or under-exposed, and amateurish.
 
-## About the Application
+Tibbo [SCAP library](http://docs.tibbo.com/taiko/index.html?lib_scap.htm) to the rescue! This library adds screen-grabbing to your Tibbo BASIC/C app.
 
-This download contains the library required to be able to get screenshots from the TPb2L LCD through a browser.
+This project allows you to test the library on a TPS2L(G2) device.
+To take a screenshot, point the browser to _http://<your device's IP address>/scap.html_ and click **Capture the Screen**. The app even adds a TPS2L "frame" around the screenshot.
 
----
+## Testing Notes
 
-## Required files
+Before testing, set the suitable IP address (**net.ip="...** in **on_sys_init()** of **main.tbs**).
 
-The files that is required to be included in the project are:
 
-1. scap.tbs
 
-2. scap.tbh
 
-3. scap.html
-
-4. scap_bmpfile.html
-
-5. socket library
 
    **Note:**
    Make sure that both html files are in basic type.
