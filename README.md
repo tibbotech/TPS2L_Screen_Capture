@@ -1,4 +1,4 @@
-# TPS2L_SCREEN_CAPTURE
+# TPS2L SCREEN CAPTURE
 
 Ever had to produce high-quality images of your device's LCD screen? This need often arises when you are working on web pages or user manuals describing your product's functionality. If you ever tried taking photos of LCD screens with a camera, you know that the result always looks somewhat skewed, over- or under-exposed, and amateurish.
 
@@ -9,4 +9,4 @@ To take a screenshot, point the browser to _http://<your device's IP address>/sc
 
 Before testing, set the suitable IP address (**net.ip="...** in **on_sys_init()** of **main.tbs**).
 
-![startscreen](startscreen.PNG)
+![startscreen](READMEImages/startscreen.PNG)
